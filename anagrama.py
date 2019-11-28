@@ -1,4 +1,4 @@
-MIN_WORD_SIZE = 2 # min size of a word in the output
+MIN_WORD_SIZE = 2 # tamanho mínimo da saída
 
 class Node(object):
     def __init__(self, letter='', final=False, depth=0):
@@ -47,10 +47,10 @@ def load_dictionary(path):
     return result
 
 def main():
-    print ('Loading word list.')
-    words = load_dictionary('./words.txt')
+    print ('Carregando lista.')
+    words = load_dictionary('palavras.txt')
     while True:
-        letters = input('Enter letters: ')
+        letters = input('Digite as palavras: ')
         letters = letters.lower()
         letters = letters.replace(' ', '')
         if not letters:
@@ -59,7 +59,7 @@ def main():
         for word in words.anagram(letters):
             print (word)
             count += 1
-        print(('%d results.' % count))
+        print(('%d resultados.' % count))
 
 if __name__ == '__main__':
     main()
